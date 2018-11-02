@@ -1,0 +1,246 @@
+<?php
+
+class PaypalStandard_payController extends PaymentController {
+
+    private $keyName = "PaypalStandard";
+
+    /* public function __construct()
+
+      {
+      echo 'Here'; exit;
+      } */
+
+    private function getPaymentForm() {
+        $pmObj = new PaymentSettings($this->keyName);
+
+        $paymethodSettings = $pmObj->getPaymentSettings();
+
+        $actionUrl = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+
+        if ($paymethodSettings["transaction_mode"] == 1) {
+            $actionUrl = 'https://www.paypal.com/cgi-bin/webscr';
+        }
+
+        // $currency = Currency::getAttributesById(FatApp::getConfig('conf_default_currency'));
+		
+		$currency = Currency::getAttributesById(Currency::getDefaultId());
+		
+		$frm = new Form('frmPay');
+        $frm->setFormTagAttribute('id', 'frmPay');
+        $frm->setFormTagAttribute('action', $actionUrl);
+        $frm->addHiddenField('&nbsp;', 'cmd', '_xclick');
+        $frm->addHiddenField('&nbsp;', 'business', $paymethodSettings['merchant_email']);
+        $frm->addHiddenField('&nbsp;', 'charset', 'utf-8');
+        $frm->addHiddenField('&nbsp;', 'currency_code', $currency['currency_code']);
+        $frm->addHiddenField('&nbsp;', 'item_name', '');
+        $frm->addHiddenField('&nbsp;', 'amount', '');
+        $frm->addHiddenField('&nbsp;', 'quantity', '');
+        $frm->addHiddenField('&nbsp;', 'image_url', FatUtility::generateUrl('Campus', 'images', array('logo.png')));
+        $frm->addHiddenField('&nbsp;', 'custom', '');
+        //	$frm->addHiddenField('','rm',"2");
+        $frm->addHiddenField('&nbsp;', 'return');
+        $frm->addHiddenField('&nbsp;', 'cancel_return');
+        $frm->addHiddenField('&nbsp;', 'notify_url');
+        $frm->addSubmitButton('', 'btn_submit', Labels::getLabel('LBL_PROCEED_TO_PAY'), array('class' => 'themebtn themebtn--small'));
+        return $frm;
+    }
+
+    function charge($orderId) {
+        $pmObj = new PaymentSettings($this->keyName);
+        if (!$payment_settings = $pmObj->getPaymentSettings()) {
+            Message::addErrorMessage($pmObj->getError());
+            redirectUserReferer();
+        }
+
+        $orderObj = new Orders();
+        $srch = $orderObj->orderSearch();
+
+        $srch->addCondition(Orders::tblFld('id'), 'LIKE', $orderId);
+        $srch->doNotCalculateRecords();
+        $srch->doNotLimitRecords();
+        $srch->addFld('order_net_amount, order_user_id, op_name, op_record_id');
+        $rs = $srch->getResultSet();
+
+        if (!$order = FatApp::getDb()->fetch($rs)) {
+            Message::addErrorMessage(Labels::getLabel('M_INVALID_REQUEST'));
+            FatApp::redirectUser(CommonHelper::campusGenerateUrl());
+        }
+
+        if ($order['order_net_amount'] > 0) {
+            $frm = $this->getPaymentForm();
+
+            $array['custom'] = $orderId . '|' . $order['op_record_id'] . '|' . $order['order_user_id'];
+            $array['quantity'] = 1;
+            $array['amount'] = $order['order_net_amount'];
+            $array['item_name'] = $order['op_name'];
+            $array['return'] = FatUtility::generateFullUrl("Member");
+            $array['cancel_return'] = FatUtility::generateFullUrl('Campus', "orderCancelled");
+            $array['notify_url'] = FatUtility::generateFullUrl($this->keyName . '_pay', 'callback');
+            $array['currency_code'] = $this->set('paymentAmount', $order['order_net_amount']);
+
+            $frm->fill($array);
+            $this->set('frm', $frm);
+        } else {
+            $this->set('error', getLabel('M_INVALID_ORDER_PAID_CANCELLED'));
+        }
+
+        // $themeDirName = FatUtility::camel2dashed(substr(FatApp::getController(), 0, -(strlen('controller'))));exit;
+        // $this->_template->addJs(CONF_THEME_PATH . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . '01-jquery-2.1.4.min.js');
+
+        $this->_template->render(true, false);
+    }
+
+    public function callback() {
+        $pmObj = new PaymentSettings($this->keyName);
+        $paymentSettings = $pmObj->getPaymentSettings();
+
+        $post = FatApp::getPostedData();
+
+        // $post['custom'] = "CMP-ORD-1469790605|4|18";
+
+        $orderDetail = (isset($post['custom'])) ? $post['custom'] : array();
+
+        $orderId = 0;
+        $pkgId = 0;
+        $userId = 0;
+
+        if (!empty($orderDetail)) {
+            $attr = explode('|', $orderDetail);
+
+            if (count($attr) >= 3) {
+                $orderId = $attr[0];
+                $pkgId = $attr[1];
+                $userId = $attr[2];
+            }
+        }
+
+        // $orderId = 'CMP-ORD-1469791492';
+        // $pkgId = 4;
+        // $userId = 18;
+        // die('test');
+        $orderObj = new Orders($orderId);
+        $srch = $orderObj->orderSearch();
+
+        $srch->addCondition(Orders::tblFld('id'), 'LIKE', $orderId);
+        $srch->addCondition(Orders::tblFld('payment_status'), '!=', ApplicationConstants::ORDER_CONFIRMED_PAYMENT_STATUS);
+        $srch->doNotCalculateRecords();
+        $srch->doNotLimitRecords();
+        $srch->addFld('order_id, order_net_amount, order_payment_status, order_user_id, op_id, op_name, op_record_id, op_credit_points, op_price');
+        $rs = $srch->getResultSet();
+
+        if (!$order = FatApp::getDb()->fetch($rs)) {
+            Message::addErrorMessage(Labels::getLabel('M_INVALID_REQUEST'));
+            FatApp::redirectUser(CommonHelper::campusGenerateUrl());
+        }
+
+        $orderAmountTobeCharged = $order['order_net_amount'];
+        $responseData = FatUtility::convertToJson($post);
+
+        if ($orderAmountTobeCharged > 0 && $order['order_payment_status'] != ApplicationConstants::ORDER_CONFIRMED_PAYMENT_STATUS) {
+            /* DUMMY DATA WITH IPN [ */
+            // $response = 'VERIFIED';
+            // $post['payment_status'] = 'Completed';
+            // $post['mc_gross'] = 1.00;
+            // $post["txn_id"] = '27G70864L7810462P';
+            /* ] */
+
+            $response = $this->verifyIPN($post, $paymentSettings["transaction_mode"]);
+
+            if ((strcmp($response, 'VERIFIED') == 0 || strcmp($response, 'UNVERIFIED') == 0) && isset($post['payment_status'])) {
+                $orderPaymentStatus = ApplicationConstants::ORDER_INITIAL_PAYMENT_STATUS;
+
+                switch ($post['payment_status']) {
+                    case 'Pending':
+                        $orderPaymentStatus = ApplicationConstants::ODR_TRANS_PENDING_STATUS;
+                        break;
+                    case 'Processed':
+                        $orderPaymentStatus = ApplicationConstants::ODR_TRANS_PROCESSED_STATUS;
+                        break;
+                    case 'Completed':
+                        $totalPaidMatch = ((float) $post['mc_gross'] == $orderAmountTobeCharged);
+                        if ($totalPaidMatch) {
+                            $orderPaymentStatus = ApplicationConstants::ORDER_CONFIRMED_PAYMENT_STATUS;
+                        }
+
+                        if (!$totalPaidMatch) {
+                            $responseData .= "\n\n PP_STANDARD :: TOTAL PAID MISMATCH! " . strtolower($post['mc_gross']) . "\n\n";
+                        }
+                        break;
+                    default:
+                        $orderPaymentStatus = ApplicationConstants::ODR_TRANS_PENDING_STATUS;
+                        break;
+                }
+
+                /* if ($orderPaymentStatus == ApplicationConstants::ORDER_CONFIRMED_PAYMENT_STATUS){ */
+
+                /* $orderObj->assignValues(array('order_payment_status' => $orderPaymentStatus));
+                  $orderObj->save(); */
+
+                $oTransObj = new OrderTransactions();
+                $pmData = $pmObj->getPaymentMethodByCode();
+                $paymentMethod = $pmData['pmethod_name'];
+                $order['mc_gross'] = $post["mc_gross"];
+                if ($oTransObj->addOrderTransaction($orderId, $order['mc_gross'], $order['op_price'], $paymentMethod, $post["txn_id"], $orderPaymentStatus, $responseData)) {
+                    if ($orderPaymentStatus == ApplicationConstants::ORDER_CONFIRMED_PAYMENT_STATUS && $totalPaidMatch) {
+                        $transId = $oTransObj->getOrderTransactionId();
+                        //add credit points in wallet 
+                        $walletObj = new WalletTransactions();
+                        /* Get Previous Balance [ */
+                        $curBalance = $walletObj->getCredits($order['order_user_id']);
+                        /* ] */
+                        $availBalance = $curBalance + $order['op_credit_points'];
+                        $comments = sprintf(Labels::getLabel('MSG_ADDED_CREDITS_POINTS'), $order['op_credit_points'], $order['op_name'], $order['op_record_id']);
+                        if ($walletObj->addWalletTransaction(
+                                        $order['order_id'], $order['op_credit_points'], $order['op_id'], $userId, ApplicationConstants::PKG_CREDIT_WALLET_TYPE, $comments, $availBalance, $transId
+                                )
+                        ) {
+                            $notiData['notification_for_user_id'] = $userId;
+                            $notiData['notification_text'] = $comments;
+                            $notiData['notification_added_on'] = 'mysql_func_NOW()';
+                            $notiData['notification_type'] = ApplicationConstants::TYPE_WALLET_TRANSACTION;
+                            $notiData['notification_record_id'] = $walletObj->getMainTableRecordId();
+
+                            $notiObj = new Notifications();
+
+                            $notiObj->assignValues($notiData, true);
+
+                            $notiObj->save();
+                        }
+                    }
+                }
+                $orderObj->updateOrder(array('order_payment_status' => $orderPaymentStatus));
+
+                /* }else{
+                  $orderPaymentObj->addOrderPaymentComments($request);
+                  } */
+            }
+            curl_close($curl);
+        } else {
+            EmailHandler::sendMail(FatApp::getConfig('CONF_ADMIN_EMAIL', FatUtility::VAR_STRING, 'pop@dummyid.com'), 'CMP PP IPN post', $responseData);
+        }
+    }
+
+    private function verifyIPN($post, $transactionMode = 0) {
+        $request = 'cmd=_notify-validate';
+
+        foreach ($post as $key => $value) {
+            $request .= '&' . $key . '=' . urlencode(html_entity_decode($value, ENT_QUOTES, 'UTF-8'));
+        }
+
+        $curl = curl_init('https://www.sandbox.paypal.com/cgi-bin/webscr');
+
+        if ($transactionMode == 1) {
+            $curl = curl_init('https://www.paypal.com/cgi-bin/webscr');
+        }
+
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $request);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        return curl_exec($curl);
+    }
+
+}

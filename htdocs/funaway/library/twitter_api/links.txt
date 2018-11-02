@@ -1,0 +1,16 @@
+http://stackoverflow.com/questions/6148597/twitter-api-to-get-tweet-and-re-tweets-count-in-php
+
+function getTweetCount($url)
+{
+    $url = urlencode($url);
+    $twitterEndpoint = "http://urls.api.twitter.com/1/urls/count.json?url=%s";
+    $fileData = file_get_contents(sprintf($twitterEndpoint, $url));
+    $json = json_decode($fileData, true);
+    unset($fileData); // free memory
+    //print_r($json);
+    return $json['count'];
+}
+
+
+
+https://api.twitter.com/1/users/show.json?screen_name=TwitterAPI&include_entities=true

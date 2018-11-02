@@ -1,0 +1,67 @@
+#body {
+	padding: 60px 0;
+}
+
+.contribution-wrap h2 {
+    background: #333;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    margin: -25px -25px 25px;
+    padding: 15px 25px;
+}
+#frmContribute .editformTable {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+#frmContribute.siteForm .editformTable td {
+    display: block;
+    padding-bottom: 15px;
+    vertical-align: text-bottom;
+}
+#security_code {
+	float: left;
+	margin-right: 10px !important;
+	width: 395px !important;
+}
+.captchimg {
+	float: left;
+	height: 40px;
+}
+.reloadimg {
+	color: #eb3f4f;
+	float: left;
+	font-size: 30px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	position: relative;
+	width: 35px;
+}
+#frmContribute.siteForm input[type="submit"] {
+	background: #eb3e4f;
+	border: 1px solid #eb3e4f;
+	color: #fff;
+}
+#frmContribute.siteForm input[type="submit"]:hover {
+	background: #333;
+	border: 1px solid #000;
+	color: #fff;
+}
+.contribution-wrap {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    display: table;
+    margin: 0 auto;
+    padding: 25px;
+    width: 600px;
+}
+#frmContribute.siteForm .editformTable td:first-child {
+	width: 30%;
+	padding-bottom:5px;
+}
+.blank {
+    padding-top: 15px;
+}
+

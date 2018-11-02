@@ -1,0 +1,21 @@
+div class='addons-section'
+php if(!empty($addons)){
+ul class=gallery gallery--1 thumb__list video__list
+php foreach($addons as $add){ 
+ 
+	li class=gallery__item thumb__item
+		
+		
+			
+		
+		label class=thumb__statusphp echo Infot_lang('STATUS') emphp echo InfogetVideoStatusByKey($vid['activityvideo_active'])emlabel
+		a href=javascript; onclick=removeAddon(php echo $vid['activityvideo_id']) class=button button--small button--fill button--dark thumb__deletephp echo Infot_lang('DELETE')a
+	li
+php } 
+ul
+php }else{
+	php  echo Infot_lang('NO_ADDONS_YET');
+php } 
+div	
+	
+hr	

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+            @media only screen and (max-width:599px){
+                *{
+                    -webkit-box-sizing: border-box;
+                    -ms-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                }
+                table, tbody, th, td, tr{
+                    width: 100%!important;
+                    display: block!important;
+                }
+                img{
+                    width: auto!important;
+                    max-width: 100%!important;
+                }
+            }
+        </style>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body style="margin: 0; padding: 0;">
+        <table width="100%" bgcolor="#f3f6fa" style="background-color: #f3f6fa;">
+            <tr>
+                <td align="center" valign="top">
+                    <table width="600" style="max-width: 600px; text-align: center; margin: auto;">
+                        <tr>
+                            <td align="center" valign="top">
+                
+                                <table border="0" cellpadding="20" cellspacing="0" width="600">
+                                   <tr>
+                                    <td valign="middle" style="text-align: center; vertical-align: middle; margin: 20px 0;" align="center">
+                                        <a href="{url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="{image_url}/logo.png" alt="" style="display: inline; min-height: auto; max-width: 120px; line-height: 100%; outline: none; text-decoration: none; border: 0;"></a>
+                                    </td>
+                                  </tr>
+                                </table>
+
+                              </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0 0 40px;">
+                                  
+                                    <tr>
+                                      <td align="left" valign="top">
+                                          <table border="0" cellspacing="0" cellpadding="40" width="100%">
+                                              <tr>
+                                                  <td bgcolor="#fff" style="text-align: left; background-color: #ffffff; color: #00153b; padding: 40px;" align="left">
+                                                   {message}
+                                                  </td>
+                                              </tr>
+                                          </table>
+                                      </td>
+                                   </tr>
+                                   
+                               </table>
+							   <!--
+                               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0;">
+                                  
+                                   <tr>
+                                      <td align="left" valign="top">
+                                          <table border="0" cellspacing="0" cellpadding="40" width="100%">
+                                              <tr>
+                                                  <td bgcolor="#fff" style="text-align: left; background-color: #ffffff; color: #00153b; padding: 40px;" align="left">
+                                                    <h6 style="font-family: sans-serif; line-height: 1.2; font-weight: normal; font-size: 17px; letter-spacing: 2px; color: #b2b2b2; margin: 0 0 10px;">Weekly Updates</h6>
+                                                    <div style="width: 100%; height: 20px;"></div>
+                                                    <img src="{image_url}/activity.jpg" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;">
+                                                    <div style="width: 100%; height: 20px;"></div>
+                                                    <h4 style="font-family: sans-serif; line-height: 1.2; font-weight: normal; font-size: 20px; margin: 0 0 10px;"><a href="{url}" style="text-decoration: none; color: inherit;">What is Lorem Ipsum?</a></h4>
+                                                    <p style="font-family: sans-serif; font-size: 17px; line-height: 1.6; color: #808080; margin: 0; padding: 0;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                                                    <div style="width: 100%; height: 20px;"></div>
+                                                    <a href="{url}" style="text-decoration: none; color: #ffffff; display: inline-block; border-collapse: separate !important; border-radius: 36px; font-family: sans-serif; font-size: 16px; font-weight: 500; line-height: 100%; letter-spacing: 6px; text-transform: uppercase; text-align: center; background-color: #d03e2a; border-color: #d03e2a; border-style: solid; border-width: 15px 40px;">See All</a>
+                                                    <div style="width: 100%; height: 40px;"></div>
+                                                    
+                                                    <table border="0" cellspacing="0" cellpadding="10" width="100%" style="border: 1px solid #e8e8e8;">
+                                                        <tr>
+                                                            <td align="left" valign="top">
+                                                                <img src="{image_url}/square.jpg" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;">
+                                                            </td>
+                                                            <td align="left" valign="top">
+                                                                <h4 style="font-family: sans-serif; line-height: 1.2; font-weight: normal; font-size: 20px; margin: 0 0 10px;"><a href="{url}" style="text-decoration: none; color: inherit;">Where can I get some?</a></h4>
+                                                                <p style="font-family: sans-serif; font-size: 17px; line-height: 1.6; color: #808080; margin: 0; padding: 0;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <div style="width: 100%; height: 40px;"></div>
+                                                    <table border="0" cellspacing="0" cellpadding="10" width="100%" style="border: 1px solid #e8e8e8;">
+                                                        <tr>
+                                                            <td align="left" valign="top">
+                                                                <h4 style="font-family: sans-serif; line-height: 1.2; font-weight: normal; font-size: 20px; margin: 0 0 10px;"><a href="{url}" style="text-decoration: none; color: inherit;">Where can I get some?</a></h4>
+                                                                <p style="font-family: sans-serif; font-size: 17px; line-height: 1.6; color: #808080; margin: 0; padding: 0;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ...</p>
+                                                            </td>
+                                                            <td align="left" valign="top">
+                                                                <img src="{image_url}/square.jpg" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <div style="width: 100%; height: 20px;"></div>
+                                                    <a href="{url}" style="text-decoration: none; color: #ffffff; display: inline-block; border-collapse: separate !important; border-radius: 36px; font-family: sans-serif; font-size: 16px; font-weight: 500; line-height: 100%; letter-spacing: 6px; text-transform: uppercase; text-align: center; background-color: #0599b2; border-color: #0599b2; border-style: solid; border-width: 15px 40px;">More</a>
+                                                  </td>
+                                              </tr>
+                                          </table>
+                                      </td>
+                                   </tr>
+                                   
+                               </table> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                
+                                <table border="0" cellpadding="40" cellspacing="0" width="600">
+                                   <tr>
+                                    <td valign="middle" style="text-align: center; vertical-align: middle; margin: 20px 0;" align="center">
+                                        <h4 style="font-family: sans-serif; line-height: 2; font-weight: bold; font-size: 18px; text-transform: uppercase; color: #67c9d3; margin: 0 0 10px;">Hang out with us</h4>
+                                        <nav>
+                                            <a href="{fburl}" target="_blank" style="text-decoration: none; color: inherit; margin: 0 10px;"><img src="{image_url}/icon-facebook.png" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;"></a>
+											
+                                            <a href="{twitterurl}" target="_blank" style="text-decoration: none; color: inherit; margin: 0 10px;"><img src="{image_url}/icon-twitter.png" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;"></a>
+                                         
+                                            <a href="{pinteresturl}" target="_blank" style="text-decoration: none; color: inherit; margin: 0 10px;"><img src="{image_url}/icon-pinterest.png" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;"></a>
+											
+                                            <a href="{conf_instagram_url}" target="_blank" style="text-decoration: none; color: inherit; margin: 0 10px;"><img src="{image_url}/icon-instagram.png" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;"></a>
+											
+											<a href="{conf_snapchat_url}" target="_blank" style="text-decoration: none; color: inherit; margin: 0 10px;"><img src="{image_url}/icon-snapchat.png" alt="" style="display: inline; min-height: auto; max-width: 520px; line-height: 100%; outline: none; text-decoration: none; border: 0;"></a>
+                                            
+                                        </nav>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+
+                              </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

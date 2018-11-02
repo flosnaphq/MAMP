@@ -1,0 +1,31 @@
+.photosrow {
+    display: inline-block;
+    width: 100%;
+}
+.photosquare {
+    background: none repeat scroll 0 0 #fff;
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: 100px;
+}
+.photosquare img {
+    border: 1px solid #d6d6d6;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+}
+.photosquare .crossLink {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.crossLink {
+    background: url("/images/white_close.png") no-repeat scroll center center #f00;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+}

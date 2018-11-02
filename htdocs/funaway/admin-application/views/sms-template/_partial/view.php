@@ -1,0 +1,16 @@
+<?php
+defined('SYSTEM_INIT') or die('Invalid Usage.');
+?>
+
+
+<table width='100%' class='table table-responsive'>
+	<tr>
+		<td><strong>Template Name</strong></td>
+		<td><?php echo $records['smstpl_name']?></td>
+	</tr>
+	<tr>
+		<td><strong>Body</strong></td>
+		<td><?php echo html_entity_decode($records['smstpl_body'])?></td>
+	</tr>
+	
+</table>

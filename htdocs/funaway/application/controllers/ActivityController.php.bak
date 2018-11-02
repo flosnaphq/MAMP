@@ -1,0 +1,468 @@
+<?php
+class ActivityController extends MyAppController {
+	
+	
+	public function __construct($action){
+		parent::__construct($action);
+		
+	}
+	
+	function fatActionCatchAll(){
+		FatApp::redirectUser(FatUtility::generateUrl('home','error404'));
+	}
+	
+	function host($host_name, $host_id){
+		$this->_template->addJs('activity/page-js/social.js');
+		$host_id  = FatUtility::int($host_id);
+		if($host_id <= 0){
+			FatApp::redirectUser(FatUtility::generateUrl('home','error404'));
+		}
+		$usr = new User();
+		$user_data = $usr->getUserByUserId($host_id);
+		if(empty($user_data) || $user_data[User::DB_TBL_PREFIX.'active'] != 1 || $user_data[User::DB_TBL_PREFIX.'type'] != 1){
+			FatApp::redirectUser(FatUtility::generateUrl('home','error404'));
+		}
+		$total_review = Reviews::getHostActivityRating($host_id);
+		$this->set('total_review',$total_review);
+		$this->set('user_data',$user_data);
+		$this->set('host_id',$host_id);
+		$this->_template->render();
+		
+	}
+	
+	public function hostActivityListing() {
+		$data = FatApp::getPostedData();
+		$host_id = isset($data['host_id'])?FatUtility::int($data['host_id']):0;
+		if($host_id <= 0){
+			FatUtility::dieJsonError(Info::t_lang('INVALID_REQUEST!'));
+		}
+		$usr = new User();
+		$user_data = $usr->getUserByUserId($host_id);
+		if(empty($user_data) || $user_data[User::DB_TBL_PREFIX.'active'] != 1 || $user_data[User::DB_TBL_PREFIX.'type'] != 1){
+			FatUtility::dieJsonError(Info::t_lang('INVALID_REQUEST!'));
+		}
+		$acts = new Activity();
+		$srch = $acts->getSearchObject();
+		$srch->joinTable('tbl_users','inner join','activity_user_id = user_id and user_type = 1 and user_active = 1 and user_verified = 1');
+		$srch->joinTable('tbl_island','inner join','activity_island_id = island_id and island_active = 1');
+		$srch->joinTable('tbl_activity_languages','left join','activity_id = activitylanguage_activity_id');
+		
+		
+		$srch->joinTable('tbl_services','left join','schild.service_id = activity_category_id','schild');
+		$srch->joinTable('tbl_services','left join','schild.service_parent_id = sparent.service_id','sparent');
+			
+		$srch->addFld('schild.service_name as childservice_name');
+		$srch->addFld('sparent.service_name as parentservice_name');
+		$srch->addFld('sparent.service_id as parentservice_id');
+		$srch->addCondition('activity_confirm','=',1);
+		$srch->addCondition('activity_active','=',1);
+		$srch->addCondition('activity_user_id','=',$host_id);
+			
+			
+		$srch->addGroupBy('activitylanguage_activity_id');
+		$srch->addMultipleFields(array('tbl_users.*','tbl_activities.*','SUBSTRING_INDEX(group_concat(activitylanguage_language_id separator ","),",",3) as act_lang'));
+		
+		
+		if(User::isUserLogged()){
+			$srch->joinTable('tbl_wishlist','left join','wishlist_activity_id = activity_id and 	wishlist_user_id = '.User::getLoggedUserId());
+			$srch->addFld('wishlist_activity_id');
+		}
+		
+//		echo $srch->getQuery();exit;
+		$pagesize=10;
+		$page = $data['page'];
+		$page = FatUtility::int($page);
+		$srch->setPageNumber($page);
+		$srch->setPageSize($pagesize);
+		$rs = $srch->getResultSet();
+	
+		$records = FatApp::getDb()->fetchAll($rs);
+		$more_record = ($page*$pagesize) < $srch->recordCount() ;
+		$this->set("arr_listing",$records);
+		$this->set('totalPage',$srch->pages());
+		$this->set('page', $page);
+		$this->set('more_record', $more_record);
+		$this->set('pageSize', $pagesize);
+		$htm = $this->_template->render(false,false,"activity/_partial/host-activity-listing.php",true,true);
+		FatUtility::dieJsonSuccess($htm);
+		
+	}
+	
+	public function index() {
+		$this->_template->addJs('activity/page-js/social.js');
+		$this->set('type',isset($_GET['type'])?$_GET['type']:"grid");
+		$this->set('island',explode(',',@$_GET['island']));
+		$this->set('theme',isset($_GET['theme'])?$_GET['theme']:0);
+		$this->set('categories',isset($_GET['categories'])?$_GET['categories']:0);
+		$this->set('duration',isset($_GET['duration'])?$_GET['duration']:0);
+		$this->set('price',isset($_GET['price'])?$_GET['price']:0);
+		$this->set('sort',isset($_GET['sort'])?$_GET['sort']:"");
+		$this->set('services',Services::getCategories());
+		$this->set('sortby',Info::getSortBy());
+		$this->set('islands',Island::getIsland());
+		$scats = array();
+		if(isset($_GET['theme'])){
+			$scats = Services::getCategories($_GET['theme']);
+		}
+		$this->set('scats',$scats);
+		$this->_template->render();
+	}
+	
+	
+	
+	
+	public function listing() {
+		$acts = new Activity();
+		$srch = $acts->getSearchObject();
+		$srch->joinTable('tbl_users','inner join','activity_user_id = user_id and user_type = 1 and user_active = 1');
+		$srch->joinTable('tbl_island','inner join','activity_island_id = island_id and island_active = 1');
+		$srch->joinTable('tbl_activity_languages','left join','activity_id = activitylanguage_activity_id');
+		
+		
+		$srch->joinTable('tbl_services','left join','schild.service_id = activity_category_id','schild');
+		$srch->joinTable('tbl_services','left join','schild.service_parent_id = sparent.service_id','sparent');
+			
+		$srch->addFld('schild.service_name as childservice_name');
+		$srch->addFld('sparent.service_name as parentservice_name');
+		$srch->addFld('sparent.service_id as parentservice_id');
+		$srch->addCondition('activity_confirm','=',1);
+		$srch->addCondition('activity_active','=',1);
+			
+			
+		$srch->addGroupBy('activitylanguage_activity_id');
+		$srch->addMultipleFields(array('tbl_users.*','tbl_activities.*','SUBSTRING_INDEX(group_concat(activitylanguage_language_id separator ","),",",3) as act_lang'));
+		$data = FatApp::getPostedData();
+		
+		foreach($data as $k =>$v){
+			switch($k){
+				case "sort":{
+							if(trim($v[0]) == "duration"){
+								$srch->addOrder('activity_duration','desc');
+							}
+							if(trim($v[0]) == "price"){
+								$srch->addOrder('activity_price','desc');
+							}
+						
+					break;
+				}
+				case "island":{
+					$srch->addDirectCondition('island_id IN ('.implode(',',$v).')');
+					break;
+				}
+				case "durations":{
+					$duration = @$v[0];
+					if(!empty($duration)){ 
+						$srch->addCondition('activity_duration','=',$duration);
+					}
+					break;
+				}
+				
+				case "theme":{
+					$srch->addDirectCondition('schild.service_parent_id IN ('.implode(',',$v).')');
+					break;
+				}
+				
+				case "categories":{
+					$srch->addCondition('activity_category_id','=',$v[0]);
+					break;
+				}
+				
+			
+				
+				case "prices":{
+					$p = explode('-',$v[0]);
+					$srch->addCondition('activity_price','>=',Currency::reversePrice($p[0]));
+					$srch->addCondition('activity_price','<',Currency::reversePrice($p[1]));
+					break;
+				} 
+				
+			}
+		}
+		
+		if(User::isUserLogged()){
+			$srch->joinTable('tbl_wishlist','left join','wishlist_activity_id = activity_id and 	wishlist_user_id = '.User::getLoggedUserId());
+			$srch->addFld('wishlist_activity_id');
+		}
+//		echo $srch->getQuery();exit;
+		$pagesize=10;
+		$page = $data['page'];
+		$page = FatUtility::int($page);
+		$srch->setPageNumber($page);
+		$srch->setPageSize($pagesize);
+		$rs = $srch->getResultSet();
+	#	echo $srch->getError();exit;
+		$records = FatApp::getDb()->fetchAll($rs);
+		$more_record = ($page*$pagesize) < $srch->recordCount() ;
+		$this->set("arr_listing",$records);
+		$this->set('totalPage',$srch->pages());
+		$this->set('page', $page);
+		$this->set('more_record', $more_record);
+		$this->set('pageSize', $pagesize);
+		$htm = $this->_template->render(false,false,"activity/_partial/listing.php",true,true);
+		FatUtility::dieJsonSuccess(array('msg'=>$htm,'more_record'=>FatUtility::int($more_record)));
+		
+	}
+	
+	public function themeblock(){
+		$post = FatApp::getPostedData();
+		$services = array();
+		if(isset($post['theme_id'])){
+			$theme_id = $post['theme_id'];
+			$services = Services::getCategories($theme_id);
+		}
+		$this->set('services', $services);
+		$htm = $this->_template->render(false,false,"activity/_partial/theme-block.php",true,true);
+		FatUtility::dieJsonSuccess($htm);
+	}
+	
+	public function detail($activityId = 0){
+		$user_id = 0;
+		if(User::isUserLogged()){
+			$user_id = User::getLoggedUserId();
+		}
+		$this->_template->addJs('common-js/plugins/slick.min.js');
+		$this->_template->addJs('activity/page-js/social.js');
+		$acts = new Activity();
+		$srch = $acts->getSearchObject();
+		$srch->joinTable('tbl_users','inner join','activity_user_id = user_id and user_type = 1 and user_active = 1 ');
+		$srch->joinTable('tbl_island','inner join','activity_island_id = island_id and island_active = 1');
+		$srch->joinTable('tbl_activity_languages','left join','activity_id = activitylanguage_activity_id');
+		
+		
+		$srch->joinTable('tbl_services','left join','schild.service_id = activity_category_id','schild');
+		$srch->joinTable('tbl_services','left join','schild.service_parent_id = sparent.service_id','sparent');
+			
+	 	$srch->addFld('schild.service_name as childservice_name');
+		$srch->addFld('island_name');
+		$srch->addFld('sparent.service_name as parentservice_name');
+		$srch->addFld('sparent.service_id as parentservice_id'); 
+		$srch->addCondition('activity_id','=',$activityId);
+		$srch->addCondition('activity_confirm','=',1);
+		$srch->addCondition('activity_active','=',1);
+	//	$srch->addDirectCondition("date(activity_start_date) < '".Info::currentDate()."'");
+	//	$srch->addDirectCondition("date(activity_end_date) > '".Info::currentDate()."'");
+		if(User::isUserLogged()){
+			$srch->joinTable('tbl_wishlist','left join','wishlist_activity_id = activity_id and 	wishlist_user_id = '.User::getLoggedUserId());
+			$srch->addFld('wishlist_activity_id');
+		}
+			
+			
+		$srch->addGroupBy('activitylanguage_activity_id');
+		$srch->addMultipleFields(array('tbl_users.*','tbl_activities.*','group_concat(activitylanguage_language_id separator ",") as act_lang'));
+		$rs = $srch->getResultSet();
+	#	echo $srch->getError();exit;
+		$activity = FatApp::getDb()->fetch($rs);
+	//	Info::test($activity);exit;
+		$this->set('activity',$activity);
+		$this->set('addons',$acts->getActivityAddons($activityId));
+		
+		
+		$search = Activity::getSearchObject();
+		$search->addCondition('activity_user_id','=',$activity['activity_user_id']);
+		$search->addCondition('activity_confirm','=',1);
+		$search->addCondition('activity_active','=',1);
+		//$search->addDirectCondition("date(activity_start_date) < '".Info::currentDate()."'");
+		//$search->addDirectCondition("date(activity_end_date) > '".Info::currentDate()."'");
+		$search->addGroupBy('activity_id');
+		$page = 1;
+		$page = FatUtility::int($page);
+		$search->setPageNumber($page);
+		$search->setPageSize(3);
+		$rs = $search->getResultSet();
+		$records = FatApp::getDb()->fetchAll($rs);
+		if(empty($records)){
+			FatApp::redirectUser(FatUtility::generateUrl('activity'));
+		}
+		
+		
+		
+		
+		$this->set("hostactivity",$records);
+		$this->set("user_id",$user_id);
+		
+		///////////////////////cancellation policy\\\\\\\\\\\\\\\\\\
+		$cancellation = new CancellationPolicy($activity['activity_cancelation']);
+		$cancellation->loadFromDb();
+		$cancellation_policy = $cancellation->getFlds();
+		
+		
+		
+		
+		$this->set('videos',$acts->getActivityVideos($activityId,true));
+		$this->set('images',$acts->getActivityImages($activityId,1));
+		$this->set('cancellation_policy',$cancellation_policy);
+		
+		//////////////////////////////////////////////////////////////////
+		$this->_template->render();
+	}
+	
+	
+	public function calendar(){
+		$post = FatApp::getPostedData();
+		$activityId = intval($post['activity_id']);
+		$e = new Activity($activityId);
+		$e->loadFromDb();
+		$flds = $e->getFlds();
+		$startyear = date('Y',strtotime($flds['activity_start_date']));
+		$startmonth = date('m',strtotime($flds['activity_start_date']));
+		
+		$endyear = date('Y',strtotime($flds['activity_end_date']));
+		$endmonth = date('m',strtotime($flds['activity_end_date']));
+		
+		if(isset($post)  && !empty($post) && isset($post['type'])){
+			if($post['type'] == 'prev'){
+				$yr = $post['year'] ;
+				$month = $post['month'];
+				if($month == 1){
+					$month =12;
+					$yr = $yr-1;
+				}else{
+					$month = $month - 1;
+				}
+			}
+
+			if($post['type'] == 'next'){
+				$yr = $post['year'] ;
+				$month = $post['month'];
+				if($month == 12){
+					$month =1;
+					$yr = $yr+1;
+				}else{
+					$month = $month + 1;
+				}
+			}
+			
+			if($post['type'] == 'current'){
+				$yr = $post['year'] ;
+				$month = $post['month'];
+			}
+		}else{
+			$yr = $startyear;
+			$month = $startmonth;
+		}
+		$next = 1;
+		$prev = 1;
+			
+				$pyr = $yr ;
+				$pmonth = $month;
+				if($pmonth == 1){
+					$pmonth =12;
+					$pyr = $pyr-1;
+				}else{
+					$pmonth = $pmonth - 1;
+				}
+			
+			if($pyr < $startyear){
+				$prev = 0;
+			}
+			if($pyr == $startyear && $pmonth < $startmonth){
+				$prev = 0;
+			}
+
+			
+				$nyr = $yr;
+				$nmonth = $month;
+				if($nmonth == 12){
+					$nmonth =1;
+					$nyr = $nyr+1;
+				}else{
+					$nmonth = $nmonth + 1;
+				}
+			
+			
+			if($nyr > $endyear){
+				$next = 0;
+			}
+			if($nyr == $endyear && $nmonth > $endmonth){
+				$next = 0;
+			}
+		 
+		
+		$currentDate = Info::currentDate();
+		$c = new Calendar($month,$yr);
+		$calendar = $c->generateMonthCalendar();
+		$cals = array();
+		foreach($calendar as $k=>$v){
+			
+			$date = $yr.'-'.$month.'-'.$v;
+			$class= "";
+			$cals[$k]['date'] = $v;
+			$cals[$k]['fulldate'] = date('Y-m-d',strtotime($date));
+			$subclass = "";
+			if(strtotime($currentDate) == strtotime($date)){
+				$class .= ' current';
+			}
+			
+			if(strtotime($flds['activity_start_date']) == strtotime($date)){
+				$class .= ' start';
+			}
+			
+			if(strtotime($flds['activity_end_date']) == strtotime($date)){
+				$class .= ' end';
+			}
+			
+			if(strtotime($date) < strtotime($flds['activity_start_date'])){
+				$class .= ' disable';
+			}
+			
+		 	if(strtotime($date) > strtotime($flds['activity_end_date'])){
+				$class .= ' disable';
+			} 
+			
+			$cals[$k]['events'] = array();
+			if($v!="") {
+				if($cals[$k]['events'] = $e->getActivityEventByDate($activityId,date('Y-m-d',strtotime($date)))){
+				//	Info::test($cals);
+					$class .= ' selection';
+					$subclass .= ' calc-dt';
+					
+				}
+			}
+			$cals[$k]['class'] = $class;
+			$cals[$k]['subclass'] = $subclass;
+		}
+		$this->set("year",$yr);	
+		$dt = DateTime::createFromFormat('!m', $month);
+		$this->set("showmonth",$dt->format('M'));
+		$this->set("month",$month);
+		
+		$this->set("next",$next);
+		
+		$this->set("prev",$prev);
+		
+		$this->set("calendar",$cals);
+		$html = $this->_template->render(false,false,'activity/_partial/calendar.php',true,true);
+		die(FatUtility::convertToJson(array('status'=>1,'html'=>$html)));
+	}
+	
+	
+	public function event(){
+		$post = FatApp::getPostedData();
+		$activityId = intval($post['activity_id']);
+		$dt = intval($post['date']);
+		$mn = intval($post['month']);
+		$yr = intval($post['year']);
+		$e = new Activity();
+		$events = $e->getActivityEventByDate($activityId,date('Y-m-d',strtotime($yr.'-'.$mn.'-'.$dt)));
+		
+		
+		$arr = array();
+		foreach($events as $eves){
+			$arr[$eves['activityevent_id']] =  date('H:i',strtotime($eves['activityevent_time']));
+		}
+		$frm = new Form('frmCoords');
+		$frm->addSelectBox(Info::t_lang('SELECTL_APPROPRIATE_EVENT'), 'events',$arr,"",array("id"=>"eventOption",'onchange'=>'updatePrice()'));
+		
+		$this->set('frm',$frm);
+		
+		$html = $this->_template->render(false,false,'activity/_partial/event.php',true,true);
+		die(FatUtility::convertToJson(array('status'=>1,'html'=>$html)));
+			
+		//	return $frm;
+		
+	}
+	
+	
+	
+	
+}

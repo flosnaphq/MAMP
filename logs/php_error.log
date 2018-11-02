@@ -1,0 +1,270 @@
+[02-Nov-2018 11:00:06 UTC] PHP Warning:  POST Content-Length of 10708817 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[02-Nov-2018 11:11:38 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:11:38 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:11:38 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 11:12:21 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:12:21 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:12:21 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 11:13:10 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:13:10 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:13:10 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 11:13:11 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:13:11 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:13:11 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 11:13:12 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:13:12 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:13:12 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 11:13:12 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:13:12 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:13:12 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 11:15:56 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:15:56 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:15:56 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 07:15:56 America/New_York] PHP Fatal error:  <br>The encoded file <b>/Applications/MAMP/htdocs/funaway/library/core/FatUtility.class.php</b> requires a license file <b>license.txt</b>. in Unknown on line 0
+[02-Nov-2018 11:16:16 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:16:16 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:16:16 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 07:16:16 America/New_York] PHP Fatal error:  <br>The encoded file <b>/Applications/MAMP/htdocs/funaway/library/core/FatUtility.class.php</b> requires a license file <b>license.txt</b>. in Unknown on line 0
+[02-Nov-2018 11:17:00 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:17:00 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 27
+[02-Nov-2018 07:17:00 America/New_York] PHP Warning:  ini_set(): A session is active. You cannot change the session module's ini settings at this time in /Applications/MAMP/htdocs/funaway/public/application-top.php on line 28
+[02-Nov-2018 07:17:01 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:17:51 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:17:51 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:18:28 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:18:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:19:17 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:19:17 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:19:18 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:19:18 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:19:19 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:19:19 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:19:54 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:19:54 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:19:55 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:19:55 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:20:00 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:20:00 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:20:13 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:20:13 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Database' not found in /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): FatApplication->getDb()
+#1 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): FatApplication->loadCommonConfiguration()
+#2 /Applications/MAMP/htdocs/funaway/library/core/FatApp.class.php(0): FatApplication->getConfig('conf_fat_cache_...', 1, 0)
+#3 /Applications/MAMP/htdocs/funaway/public/application-top.php(33): FatApp::getConfig('conf_fat_cache_...', 1, 0)
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(15): require_once('/Applications/M...')
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php on line 0
+[02-Nov-2018 11:20:23 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:20:23 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:39:45 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:39:45 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 11:47:55 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 07:47:55 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:18:09 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:18:09 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:18:18 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:18:18 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:19:27 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:19:27 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:20:15 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:20:15 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:21:37 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:21:37 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:21:58 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:21:58 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:22:52 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:22:52 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:22:59 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:22:59 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:24:05 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:24:05 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:24:55 UTC] PHP Notice:  Undefined index: url in /Applications/MAMP/htdocs/funaway/public/index_noauth.php on line 8
+[02-Nov-2018 12:25:14 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 08:25:14 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAssoc() on boolean in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php:0
+Stack trace:
+#0 /Applications/MAMP/htdocs/funaway/application/models/Activity.php(493): Database->fetchAll(false)
+#1 /Applications/MAMP/htdocs/funaway/application/controllers/MyAppController.php(60): Activity::getHeaderCitiesList()
+#2 /Applications/MAMP/htdocs/funaway/application/controllers/HomeController.php(6): MyAppController->__construct('index')
+#3 /Applications/MAMP/htdocs/funaway/library/core/FatApplication.class.php(0): HomeController->__construct('index')
+#4 /Applications/MAMP/htdocs/funaway/public/index.php(22): FatApplication->callHook()
+#5 {main}
+  thrown in /Applications/MAMP/htdocs/funaway/library/core/Database.class.php on line 0
+[02-Nov-2018 12:25:48 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:26:57 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:26:58 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:28:08 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:28:09 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:28:16 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:28:17 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:28:37 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:50:10 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27
+[02-Nov-2018 12:50:14 UTC] PHP Warning:  Use of undefined constant CONF_WEBROOT_URL - assumed 'CONF_WEBROOT_URL' (this will throw an Error in a future version of PHP) in /Applications/MAMP/htdocs/funaway/conf/conf-common.php on line 27

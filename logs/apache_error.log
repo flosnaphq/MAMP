@@ -1,0 +1,46 @@
+[Fri Nov 02 20:59:45 2018] [notice] Digest: generating secret for digest authentication ...
+[Fri Nov 02 20:59:45 2018] [notice] Digest: done
+[Fri Nov 02 20:59:45 2018] [notice] FastCGI: process manager initialized (pid 20489)
+[Fri Nov 02 20:59:45 2018] [notice] Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.2.8 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0 configured -- resuming normal operations
+[Fri Nov 02 21:11:20 2018] [error] [client ::1] client denied by server configuration: /Applications/MAMP/htdocs/.DS_Store, referer: http://localhost:8888/MAMP/?language=English
+[Fri Nov 02 21:11:54 2018] [notice] caught SIGTERM, shutting down
+[Fri Nov 02 21:12:10 2018] [notice] Digest: generating secret for digest authentication ...
+[Fri Nov 02 21:12:10 2018] [notice] Digest: done
+[Fri Nov 02 21:12:10 2018] [notice] FastCGI: process manager initialized (pid 21004)
+[Fri Nov 02 21:12:10 2018] [notice] Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.2.8 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0 configured -- resuming normal operations
+[Fri Nov 02 21:12:20 2018] [error] [client ::1] client denied by server configuration: /Applications/MAMP/htdocs/.DS_Store, referer: http://localhost:8888/MAMP/?language=English
+sh: sestatus: command not found
+sh: gradm: command not found
+sh: sestatus: command not found
+sh: gradm: command not found
+sh: sestatus: command not found
+sh: gradm: command not found
+sh: sestatus: command not found
+sh: gradm: command not found
+sh: sestatus: command not found
+sh: gradm: command not found
+[Fri Nov 02 21:15:46 2018] [notice] caught SIGTERM, shutting down
+[Fri Nov 02 21:15:52 2018] [notice] Digest: generating secret for digest authentication ...
+[Fri Nov 02 21:15:52 2018] [notice] Digest: done
+[Fri Nov 02 21:15:52 2018] [notice] FastCGI: process manager initialized (pid 21294)
+[Fri Nov 02 21:15:52 2018] [notice] Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.2.8 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0 configured -- resuming normal operations
+[Fri Nov 02 21:15:55 2018] [error] [client ::1] client denied by server configuration: /Applications/MAMP/htdocs/.DS_Store, referer: http://localhost:8888/MAMP/?language=English
+[Fri Nov 02 21:19:59 2018] [error] [client ::1] client denied by server configuration: /Applications/MAMP/htdocs/.DS_Store, referer: http://localhost:8888/MAMP/?language=English
+[Fri Nov 02 21:54:51 2018] [notice] caught SIGTERM, shutting down
+[Fri Nov 02 21:59:43 2018] [notice] Digest: generating secret for digest authentication ...
+[Fri Nov 02 21:59:43 2018] [notice] Digest: done
+[Fri Nov 02 21:59:43 2018] [notice] FastCGI: process manager initialized (pid 22290)
+[Fri Nov 02 21:59:43 2018] [notice] Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.2.8 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0 configured -- resuming normal operations
+[Fri Nov 02 22:01:41 2018] [notice] caught SIGTERM, shutting down
+[Fri Nov 02 22:07:10 2018] [notice] Digest: generating secret for digest authentication ...
+[Fri Nov 02 22:07:10 2018] [notice] Digest: done
+[Fri Nov 02 22:07:10 2018] [notice] FastCGI: process manager initialized (pid 1097)
+[Fri Nov 02 22:07:10 2018] [notice] Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.2.8 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0 configured -- resuming normal operations
+[Fri Nov 02 22:16:36 2018] [notice] caught SIGTERM, shutting down
+[Fri Nov 02 22:17:52 2018] [notice] Digest: generating secret for digest authentication ...
+[Fri Nov 02 22:17:52 2018] [notice] Digest: done
+[Fri Nov 02 22:17:52 2018] [notice] FastCGI: process manager initialized (pid 703)
+[Fri Nov 02 22:17:52 2018] [notice] Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.2.8 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0 configured -- resuming normal operations
+[Fri Nov 02 22:18:08 2018] [error] [client ::1] client denied by server configuration: /Applications/MAMP/htdocs/.DS_Store, referer: http://localhost:8888/MAMP/index.php?language=English
+[Fri Nov 02 22:18:16 2018] [error] [client ::1] client denied by server configuration: /Applications/MAMP/htdocs/.DS_Store, referer: http://localhost:8888/MAMP/index.php?language=English
+[Fri Nov 02 22:19:26 2018] [error] [client ::1] client denied by server configuration: /Applications/MAMP/htdocs/.DS_Store, referer: http://localhost:8888/MAMP/index.php?language=English

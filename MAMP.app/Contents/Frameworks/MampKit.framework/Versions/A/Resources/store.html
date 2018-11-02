@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            Paddle.Setup({
+                         vendor: 20060,
+                         eventCallback: function(eventData) {
+                            window.location.replace('eventcallback://' + eventData.event + '?<MAMPEVENTDATASTRING>' + JSON.stringify(eventData.eventData));
+                         }
+             });
+
+             Paddle.Checkout.open({
+                                  product: <MAMPPRODUCTID>,
+                                  title: '<MAMPTITLE>',
+                                  quantity: 1,
+                                  allowQuantity: false,
+                                  locale: '<MAMPLANGUAGE>',
+                                  message: '<MAMPMESSAGE>', 
+                                  passthrough: {'site-language': '<MAMPLANGUAGE>'}
+            });
+        </script>
+    </body>
+</html>
